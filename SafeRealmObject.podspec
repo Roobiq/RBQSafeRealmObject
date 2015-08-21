@@ -14,7 +14,7 @@ SafeRealmObject offers a SafeObject class that represents a Realm Swift Object s
   s.source       = { :git => "https://github.com/Roobiq/RBQSafeRealmObject.git", :tag => "v#{s.version}"}
   s.source_files  = "*.{h,m,swift}"
   s.requires_arc = true
-  s.dependency "Realm"
+  s.dependency "RealmSwift"
   s.dependency "RealmUtilities"
 
 end
