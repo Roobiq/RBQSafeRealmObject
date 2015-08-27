@@ -119,3 +119,16 @@ public func == <T: Object>(lhs: SafeObject<T>, rhs: SafeObject<T>) -> Bool {
     
     return false
 }
+
+extension Realm {
+    /**
+    Convenience method to convert RLMRealmConfiguration to Configuration
+    
+    :nodoc:
+    */
+    internal class func toConfiguration(configuration: RLMRealmConfiguration) -> Configuration {
+        let swiftConfiguration = Configuration(path: configuration.path, inMemoryIdentifier: configuration.inMemoryIdentifier, encryptionKey: configuration.encryptionKey, readOnly: configuration.readOnly, schemaVersion: configuration.schemaVersion, migrationBlock: nil, objectTypes: nil)
+        
+        return swiftConfiguration
+    }
+}
