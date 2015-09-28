@@ -5,9 +5,10 @@ This class allows you to create a thread-safe representation of a given `RLMObje
 
 _**Note: It will only work with an `RLMObject` that has a primary key.**_
 
-Both an Objective-C and Swift version are availble, but currently the Swift version requires Realm API access that will be in a future release (see this [PR for more details](https://github.com/realm/realm-cocoa/pull/2213)).
+Both an Objective-C and Swift version are availble. Swift 2.0 support added in version 0.4.
 
 ####How To Use
+Objective-C
 ```objc
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
     RLMObjectSubclass *anObject = [RLMObjectSubclass objectForPrimaryKey:@"key"];
@@ -21,11 +22,28 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
     });
 });
 ```
+Swift
+```swift
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+    let anObject = Object()
+    
+    let safeObject = SafeObject(object: anObject)
+    
+    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        let mainThreadObject = safeObject.object()
+    })
+})
+```
 
 ####Installation
 RBQSafeRealmObject is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
+Objective-C
 ```
 pod "RBQSafeRealmObject"
+```
+Swift
+```
+pod "SafeRealmObject"
 ```
 
