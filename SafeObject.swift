@@ -67,7 +67,7 @@ public class SafeObject<T: Object>: Equatable {
     The Realm in which this object is persisted. Generated on demand.
     */
     public var realm: Realm {
-        return Realm(configuration: self.realmConfiguration, error: nil)!
+        return try! Realm(configuration: self.realmConfiguration)
     }
     
     // MARK: Functions
