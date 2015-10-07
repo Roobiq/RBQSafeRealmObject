@@ -24,7 +24,7 @@
  *
  *  @return RLMObject of appropriate subtype
  */
-+ (instancetype)rbq_objectFromSafeObject:(RBQSafeRealmObject *)safeObject;
++ (nullable instancetype)rbq_objectFromSafeObject:(nonnull RBQSafeRealmObject *)safeObject;
 
 /**
  *  Create a RLMObject in a specific Realm from a RBQSafeRealmObject
@@ -36,14 +36,14 @@
  *
  *  @return RLMObject of appropriate subtype
  */
-+ (instancetype)rbq_objectInRealm:(RLMRealm *)realm
-                   fromSafeObject:(RBQSafeRealmObject *)safeObject;
++ (nullable instancetype)rbq_objectInRealm:(nonnull RLMRealm *)realm
+                            fromSafeObject:(nonnull RBQSafeRealmObject *)safeObject;
 
 /**
  *  Create a RBQSafeRealmObject from a RLMObject
  *
  *  @return RBQSafeRealmObject which is a thread-safe representation of the original RLMObject
  */
-- (RBQSafeRealmObject *)rbq_safeObject;
+- (nullable RBQSafeRealmObject *)rbq_safeObject;
 
 @end

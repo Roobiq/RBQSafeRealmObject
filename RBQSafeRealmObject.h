@@ -20,12 +20,12 @@
 /**
  *  Original RLMObject's class name
  */
-@property (nonatomic, readonly) NSString *className;
+@property (nonatomic, readonly, nonnull) NSString *className;
 
 /**
  *  Original RLMObject's primary key value
  */
-@property (nonatomic, readonly) id primaryKeyValue;
+@property (nonatomic, readonly, nonnull) id primaryKeyValue;
 
 /**
  *  Original RLMObject's primary key property
@@ -35,12 +35,12 @@
 /**
  *  The Realm in which this object is persisted. Generated on demand.
  */
-@property (nonatomic, readonly) RLMRealm *realm;
+@property (nonatomic, readonly, nonnull) RLMRealm *realm;
 
 /**
  *  The configuration object used to create an instance of RLMRealm for the fetch request
  */
-@property (nonatomic, readonly) RLMRealmConfiguration *realmConfiguration;
+@property (nonatomic, readonly, nonnull) RLMRealmConfiguration *realmConfiguration;
 
 /**
  *  Constructor method to create an instance of RBQSafeRealmObject
@@ -52,10 +52,10 @@
  *
  *  @return A new instance of RBQSafeRealmObject
  */
-- (id)initWithClassName:(NSString *)className
-        primaryKeyValue:(id)primaryKeyValue
+- (nonnull id)initWithClassName:(nonnull NSString *)className
+        primaryKeyValue:(nonnull id)primaryKeyValue
          primaryKeyType:(RLMPropertyType)primaryKeyType
-                  realm:(RLMRealm *)realm;
+                  realm:(nonnull RLMRealm *)realm;
 
 /**
  *  Create a RBQSafeObject from a RLMObject
@@ -64,7 +64,7 @@
  *
  *  @return RBQSafeObject which is a thread-safe
  */
-+ (instancetype)safeObjectFromObject:(RLMObjectBase *)object;
++ (nullable instancetype)safeObjectFromObject:(nonnull RLMObjectBase *)object;
 
 /**
  *  Create a RLMObject from a RBQSafeObject
@@ -73,14 +73,14 @@
  *
  *  @return RLMObject (not thread-safe)
  */
-+ (id)objectfromSafeObject:(RBQSafeRealmObject *)safeObject;
++ (nonnull id)objectfromSafeObject:(nonnull RBQSafeRealmObject *)safeObject;
 
 /**
  *  Quickly convert a RBQSafeRealmObject into its RLMObject
  *
  *  @return RLMObject
  */
-- (id)RLMObject;
+- (nonnull id)RLMObject;
 
 /**
  *  Equality test for RBQSafeRealmObject
@@ -89,6 +89,6 @@
  *
  *  @return YES if both objects contain the same primary key
  */
-- (BOOL)isEqualToObject:(RBQSafeRealmObject *)object;
+- (BOOL)isEqualToObject:(nonnull RBQSafeRealmObject *)object;
 
 @end
