@@ -64,7 +64,7 @@
  *
  *  @return RBQSafeObject which is a thread-safe
  */
-+ (nullable instancetype)safeObjectFromObject:(nonnull RLMObjectBase *)object;
++ (nonnull instancetype)safeObjectFromObject:(nonnull RLMObjectBase *)object;
 
 /**
  *  Create a RLMObject from a RBQSafeObject
