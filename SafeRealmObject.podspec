@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SafeRealmObject"
-  s.version      = "0.7"
+  s.version      = "0.7.1"
   s.summary      = "Thread-safe representation of a Realm Swift Object"
   s.description  = <<-DESC
 SafeRealmObject offers a thread-safe class that represents a Realm Swift Object subclass with a primary key and can be used across threads.
@@ -14,7 +14,7 @@ SafeRealmObject offers a thread-safe class that represents a Realm Swift Object 
   s.source       = { :git => "https://github.com/Roobiq/RBQSafeRealmObject.git", :tag => "v#{s.version}"}
   s.source_files  = "*.{h,m,swift}"
   s.requires_arc = true
-  s.dependency "RealmSwift", ">=0.99"
+  s.dependency "RealmSwift", ">=0.99.1"
   s.dependency 'RealmUtilities', '>=0.2.1'
 
 end
