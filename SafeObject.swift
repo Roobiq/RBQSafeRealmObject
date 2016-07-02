@@ -22,8 +22,8 @@ public class SafeObject<T: Object>: Equatable {
     /**
     The configuration object used to create an instance of Realm for the fetch request
     */
-    public class func objectFromSafeObject(safeObject: SafeObject) -> T {
-        return unsafeBitCast(safeObject.rbqSafeRealmObject.RLMObject(), T.self)
+    public class func objectFromSafeObject(_ safeObject: SafeObject) -> T {
+        return unsafeBitCast(safeObject.rbqSafeRealmObject.RLMObject(), to: T.self)
     }
     
     // MARK: Initializer
@@ -78,7 +78,7 @@ public class SafeObject<T: Object>: Equatable {
     :returns: A new instance of the Object
     */
     public func object() -> T {
-        return unsafeBitCast(self.rbqSafeRealmObject.RLMObject(), T.self)
+        return unsafeBitCast(self.rbqSafeRealmObject.RLMObject(), to: T.self)
     }
     
     // MARK: Private Functions/Properties
@@ -126,7 +126,7 @@ extension Realm {
     
     :nodoc:
     */
-    internal class func toConfiguration(configuration: RLMRealmConfiguration) -> Configuration {
+    internal class func toConfiguration(_ configuration: RLMRealmConfiguration) -> Configuration {
         let swiftConfiguration = Configuration(fileURL: configuration.fileURL, inMemoryIdentifier: configuration.inMemoryIdentifier, encryptionKey: configuration.encryptionKey, readOnly: configuration.readOnly, schemaVersion: configuration.schemaVersion, migrationBlock: nil, objectTypes: nil)
         
         return swiftConfiguration
