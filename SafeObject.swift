@@ -23,7 +23,7 @@ public class SafeObject<T: Object>: Equatable {
     The configuration object used to create an instance of Realm for the fetch request
     */
     public class func objectFromSafeObject(_ safeObject: SafeObject) -> T {
-        return unsafeBitCast(safeObject.rbqSafeRealmObject.RLMObject(), to: T.self)
+        return unsafeBitCast(safeObject.rbqSafeRealmObject.rlmObject(), to: T.self)
     }
     
     // MARK: Initializer
@@ -36,7 +36,7 @@ public class SafeObject<T: Object>: Equatable {
     :returns: A new instance of SafeObject
     */
     public init(object: T) {
-        self.rbqSafeRealmObject = RBQSafeRealmObject.safeObjectFromObject(object)
+        self.rbqSafeRealmObject = RBQSafeRealmObject.safeObject(fromObject: object)
         self.realmConfiguration = object.realm!.configuration
     }
     
@@ -78,7 +78,7 @@ public class SafeObject<T: Object>: Equatable {
     :returns: A new instance of the Object
     */
     public func object() -> T {
-        return unsafeBitCast(self.rbqSafeRealmObject.RLMObject(), to: T.self)
+        return unsafeBitCast(self.rbqSafeRealmObject.rlmObject(), to: T.self)
     }
     
     // MARK: Private Functions/Properties
@@ -103,13 +103,13 @@ public func == <T: Object>(lhs: SafeObject<T>, rhs: SafeObject<T>) -> Bool {
     if (lhs.primaryKeyType != rhs.primaryKeyType) {
         return false;
     }
-    else if (lhs.primaryKeyType == RLMPropertyType.Int) {
+    else if (lhs.primaryKeyType == RLMPropertyType.int) {
         let lhsPrimaryKeyValue = lhs.primaryKeyValue as? Int
         let rhsPrimaryKeyValue = rhs.primaryKeyValue as? Int
         
         return lhsPrimaryKeyValue == rhsPrimaryKeyValue
     }
-    else if (lhs.primaryKeyType == RLMPropertyType.String) {
+    else if (lhs.primaryKeyType == RLMPropertyType.string) {
         let lhsPrimaryKeyValue = lhs.primaryKeyValue as? String
         let rhsPrimaryKeyValue = rhs.primaryKeyValue as? String
         
