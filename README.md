@@ -47,3 +47,11 @@ Swift
 pod "SafeRealmObject"
 ```
 
+#### CocoaPod Linting
+
+Linting using CocoaPods 1.1.0.rc.2 (with Xcode 8 fixes) needs `FORK_XCODE_WRITING` to be set to get the build to work. One warning comes through from Realm core.
+
+```bash
+FORK_XCODE_WRITING=true pod lib lint SafeRealmObject.podspec --allow-warnings
+```
+
