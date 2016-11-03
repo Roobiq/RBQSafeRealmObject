@@ -15,6 +15,7 @@ SafeRealmObject offers a thread-safe class that represents a Realm Swift Object 
   s.source_files  = "*.{h,m,swift}"
   s.private_header_files = '*.h'
   s.requires_arc = true
+  s.dependency "RBQSafeRealmObject"
   s.dependency "RealmSwift", ">=0.99.1"
   s.dependency 'RealmUtilities', '>=0.2.1'
 end
