@@ -16,5 +16,4 @@ SafeRealmObject offers a thread-safe class that represents a Realm Swift Object 
   s.requires_arc = true
   s.dependency "RealmSwift", ">=0.99.1"
   s.dependency 'RealmUtilities', '>=0.2.1'
-
 end

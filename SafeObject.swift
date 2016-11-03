@@ -83,11 +83,11 @@ public class SafeObject<T: Object>: Equatable {
     
     // MARK: Private Functions/Properties
     
-    internal let rbqSafeRealmObject: RBQSafeRealmObject
+    public let rbqSafeRealmObject: RBQSafeRealmObject
     
     internal let realmConfiguration: Realm.Configuration
     
-    internal init(rbqSafeRealmObject: RBQSafeRealmObject) {
+    public init(rbqSafeRealmObject: RBQSafeRealmObject) {
         self.rbqSafeRealmObject = rbqSafeRealmObject
         self.realmConfiguration = Realm.toConfiguration(rbqSafeRealmObject.realmConfiguration)
     }
