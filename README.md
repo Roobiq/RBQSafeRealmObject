@@ -1,7 +1,15 @@
 RBQSafeRealmObject
+
 ===========================
-#####Thread-Safe Representation Of A Realm Object
-This class allows you to create a thread-safe representation of a given `RLMObject` subclass. For example, this enables performing queries on a background thread, and passing results as `RBQSafeRealmObject` to the main-thread for display. 
+
+##### Thread-Safe Representation Of A Realm Object
+
+[![Version](https://img.shields.io/cocoapods/v/RBQSafeRealmObject.svg?style=flat)](http://cocoapods.org/pods/RBQSafeRealmObject)
+[![License](https://img.shields.io/cocoapods/l/RBQSafeRealmObject.svg?style=flat)](http://cocoapods.org/pods/RBQSafeRealmObject)
+[![Language Objective-C | Swift 3](https://img.shields.io/badge/Language-ObjectiveC%20%2F%20Swift%203-orange.svg)](https://developer.apple.com/swift)
+[![Platform](https://img.shields.io/cocoapods/p/RBQSafeRealmObject.svg?style=flat)](http://cocoapods.org/pods/RBQSafeRealmObject)
+
+This class allows you to create a thread-safe representation of a given `RLMObject` subclass. For example, this enables performing queries on a background thread, and passing results as `RBQSafeRealmObject` to the main-thread for display.
 
 _**Note: It will only work with an `RLMObject` that has a primary key.**_
 
@@ -12,12 +20,12 @@ Objective-C
 ```objc
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
     RLMObjectSubclass *anObject = [RLMObjectSubclass objectForPrimaryKey:@"key"];
-  
+
     RBQSafeRealmObject *safeObject = [RBQSafeRealmObject safeObjectFromObject:anObject];
-  
+
     dispatch_async(dispatch_get_main_queue(), ^{
         RLMObjectSubclass *mainThreadObject = [safeObject RLMObject];
-        
+
         // Do Something...
     });
 });
@@ -26,9 +34,9 @@ Swift
 ```swift
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
     let anObject = Object()
-    
+
     let safeObject = SafeObject(object: anObject)
-    
+
     dispatch_async(dispatch_get_main_queue(), { () -> Void in
         let mainThreadObject = safeObject.object()
     })
