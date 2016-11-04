@@ -15,5 +15,4 @@ RBQSafeRealmObject represents a RLMObject with a primary key and can be used acr
   s.requires_arc = true
   s.dependency 'Realm', '>= 0.99.1'
   s.dependency 'RealmUtilities', '>=0.2.1'
-
 end
