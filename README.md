@@ -15,8 +15,10 @@ _**Note: It will only work with an `RLMObject` that has a primary key.**_
 
 Both an Objective-C and Swift version are availble. Swift 2.0 support added in version 0.4.
 
-####How To Use
+#### How To Use
+
 Objective-C
+
 ```objc
 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
     RLMObjectSubclass *anObject = [RLMObjectSubclass objectForPrimaryKey:@"key"];
@@ -30,20 +32,23 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
     });
 });
 ```
-Swift
+
+Swift 3
+
 ```swift
-dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+DispatchQueue.global().async {
     let anObject = Object()
 
     let safeObject = SafeObject(object: anObject)
 
-    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    DispatchQueue.main.async {
         let mainThreadObject = safeObject.object()
-    })
-})
+    }
+}
 ```
 
-####Installation
+#### Installation
+
 RBQSafeRealmObject is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 Objective-C
