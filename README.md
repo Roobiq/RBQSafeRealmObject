@@ -1,6 +1,4 @@
-RBQSafeRealmObject
-
-===========================
+# RBQSafeRealmObject
 
 ##### Thread-Safe Representation Of A Realm Object
 
