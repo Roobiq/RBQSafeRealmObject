@@ -1,5 +1,9 @@
 # RBQSafeRealmObject & SafeRealmObject
 
+## 1.0.2
+
+- Removed objc files from SafeRealmObject (swift) spec
+
 ## 1.0.1
 
 - Fixed RealmUtilities import in RBQSafeRealmObject
