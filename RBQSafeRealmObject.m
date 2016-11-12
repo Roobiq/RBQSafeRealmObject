@@ -7,11 +7,11 @@
 //
 
 #import "RBQSafeRealmObject.h"
-#import "RLMObject+Utilities.h"
 
 #import <Realm/RLMObjectSchema.h>
 #import <Realm/RLMRealm_Dynamic.h>
 #import <Realm/RLMObjectBase_Dynamic.h>
+#import <RealmUtilities/RLMObject+Utilities.h>
 
 static id RLMObjectBasePrimaryKeyValue(RLMObjectBase *object) {
     if (!object) {
