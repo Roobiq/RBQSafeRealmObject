@@ -1,5 +1,9 @@
 # RBQSafeRealmObject & SafeRealmObject
 
+## 1.0.1
+
+- Fixed RealmUtilities import in RBQSafeRealmObject
+
 ## 1.0.0
 
 - Converted SafeRealmObject to Swift 3.
