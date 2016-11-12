@@ -49,12 +49,16 @@ DispatchQueue.global().async {
 
 RBQSafeRealmObject is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
+
 Objective-C
-```
+
+```ruby
 pod "RBQSafeRealmObject"
 ```
+
 Swift
-```
+
+```ruby
 pod "SafeRealmObject"
 ```
 

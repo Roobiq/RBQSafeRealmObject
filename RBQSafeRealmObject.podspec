@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RBQSafeRealmObject"
-  s.version      = "0.7.1"
+  s.version      = "1.0.0"
   s.summary      = "Thread-safe representation of a Realm object"
   s.description  = <<-DESC
 RBQSafeRealmObject represents a RLMObject with a primary key and can be used across threads.
