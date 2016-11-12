@@ -12,8 +12,7 @@ SafeRealmObject offers a thread-safe class that represents a Realm Swift Object 
   s.social_media_url   = "http://twitter.com/Roobiq"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/Roobiq/RBQSafeRealmObject.git", :tag => "v#{s.version}"}
-  s.source_files  = "*.{h,m,swift}"
-  s.private_header_files = '*.h'
+  s.source_files  = "*.swift"
   s.requires_arc = true
   s.dependency "RBQSafeRealmObject"
   s.dependency "RealmSwift", ">=0.99.1"
