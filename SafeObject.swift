@@ -24,7 +24,7 @@ public class SafeObject<T: Object>: Equatable {
     The configuration object used to create an instance of Realm for the fetch request
     */
     public class func objectFromSafeObject(_ safeObject: SafeObject) -> T {
-        return unsafeBitCast(safeObject.rbqSafeRealmObject.rlmObject(), to: T.self)
+        return unsafeBitCast(safeObject.rbqSafeRealmObject.rlmObject() as! RLMObjectBase, to: T.self)
     }
     
     // MARK: Initializer
@@ -79,7 +79,7 @@ public class SafeObject<T: Object>: Equatable {
     :returns: A new instance of the Object
     */
     public func object() -> T {
-        return unsafeBitCast(self.rbqSafeRealmObject.rlmObject(), to: T.self)
+        return unsafeBitCast(self.rbqSafeRealmObject.rlmObject() as! RLMObjectBase, to: T.self)
     }
     
     // MARK: Private Functions/Properties
