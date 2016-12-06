@@ -18,6 +18,7 @@
 		F90B2F121DF6B23B00C88C00 /* RBQSafeRealmObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B2EE91DF6B17400C88C00 /* RBQSafeRealmObject.framework */; };
 		F90B2F131DF6B25200C88C00 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B2EF51DF6B1A300C88C00 /* Realm.framework */; };
 		F90B2F141DF6B25200C88C00 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90B2EF61DF6B1A300C88C00 /* RealmSwift.framework */; };
+		F9C9CC631DF6C1AE00A85A48 /* RBQSRO.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C9CC621DF6C1AE00A85A48 /* RBQSRO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F90B2F0A1DF6B21C00C88C00 /* SafeRealmObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeRealmObject.h; sourceTree = "<group>"; };
 		F90B2F0B1DF6B21C00C88C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F90B2F101DF6B22700C88C00 /* SafeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeObject.swift; sourceTree = SOURCE_ROOT; };
+		F9C9CC621DF6C1AE00A85A48 /* RBQSRO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBQSRO.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				F90B2EFD1DF6B1B900C88C00 /* RLMObject+SafeObject.h */,
 				F90B2EFE1DF6B1B900C88C00 /* RLMObject+SafeObject.m */,
 				F90B2EED1DF6B17400C88C00 /* Info.plist */,
+				F9C9CC621DF6C1AE00A85A48 /* RBQSRO.h */,
 			);
 			path = RBQSafeRealmObject;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90B2EFF1DF6B1B900C88C00 /* RBQSafeRealmObject.h in Headers */,
+				F9C9CC631DF6C1AE00A85A48 /* RBQSRO.h in Headers */,
 				F90B2F011DF6B1B900C88C00 /* RLMObject+SafeObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +361,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/RBQSafeRealmObject/ModuleMapFile";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Roobiq.RBQSafeRealmObject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -379,6 +384,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/RBQSafeRealmObject/ModuleMapFile";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Roobiq.RBQSafeRealmObject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

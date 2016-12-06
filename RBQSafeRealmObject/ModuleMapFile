@@ -1,0 +1,6 @@
+framework module RBQSafeRealmObject {
+umbrella header "RBQSRO.h"
+
+export *
+module * { export * }
+}
