@@ -1,5 +1,36 @@
 # RBQSafeRealmObject
 
+### **This project is deprecated as of Realm 2.2 due to native support for passing objects across threads.** 
+
+Realm released "Thread-safe references" which conceptually act the same as `RBQSafeRealmObject` but support all types, including objects without primary keys, Realms, results, and lists:
+
+1. Initialize a `ThreadSafeReference` with the thread-confined object.
+2. Pass that `ThreadSafeReference` to a destination thread or queue.
+3. Resolve this reference on the target Realm by calling `Realm.resolve(_:)`. Use the returned object as you normally would.
+
+For example:
+
+```swift
+let realm = try! Realm()
+let person = Person(name: "Jane") // no primary key required
+try! realm.write {
+  realm.add(person)
+}
+let personRef = ThreadSafeReference(to: person)
+DispatchQueue(label: "com.example.myApp.bg").async {
+  let realm = try! Realm()
+  guard let person = realm.resolve(personRef) else {
+    return // person was deleted
+  }
+  try! realm.write {
+    person.name = "Jane Doe"
+  }
+}
+```
+See the release [blog post](https://realm.io/news/obj-c-swift-2-2-thread-safe-reference-sort-properties-relationships/) for more details.
+
+---
+
 ##### Thread-Safe Representation Of A Realm Object
 
 [![Version](https://img.shields.io/cocoapods/v/RBQSafeRealmObject.svg?style=flat)](http://cocoapods.org/pods/RBQSafeRealmObject)
